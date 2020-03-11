@@ -7,7 +7,7 @@ node {
     stage('Build') {
 	try{
 	        echo 'Building....'
-    		sh "dotnet build ConsoleApp1"
+    		sh "dotnet build " + config.target
 	        echo 'Building New Feature'
 		releasenotes(changes:"true")
         }catch(ex){
