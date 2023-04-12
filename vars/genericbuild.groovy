@@ -1,6 +1,4 @@
-import hudson.model.*;
-
-def call(Map = config[:]){
+def call(Map config[:]){
 node {
 	stage('SCM') {
 		echo 'Gathering code from version control'
