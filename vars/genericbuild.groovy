@@ -1,3 +1,5 @@
+import hudson.model.*;
+
 def call(Map = config[:]){
 node {
 	stage('SCM') {
