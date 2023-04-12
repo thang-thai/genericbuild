@@ -8,7 +8,7 @@ node {
 		try{
 			echo 'Building....'
 			withDotNet(sdk: "sdk6"){
-				sh 'dotnet build ConsoleApp1'
+				sh 'dotnet build ' + config.target
 				echo 'Building new feature'
 				releasenotes(changes: "true");
 			}
