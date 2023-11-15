@@ -7,9 +7,11 @@ node {
     stage('Build') {
 		try{
 			echo 'Building....'
-			sh 'dotnet build ' + config.target
-			echo 'Building new feature'
-			releasenotes(changes: "true");
+			withDotNet(sdk: "sdk6"){
+				sh 'dotnet build ' + config.target
+				echo 'Building new feature'
+				releasenotes(changes: "true");
+			}
 		}catch(ex){
 			echo 'Something went wrong'
 			echo ex.toString()
